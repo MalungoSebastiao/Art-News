@@ -360,7 +360,8 @@ box-shadow: none;
 	
 }
 
-/* ---------- Tugle Sidebar right -------------- */
+/* -------- Tugle Sidebar Right ----------*/
+
 #latestcomments {
 	display:none;
 }
@@ -436,8 +437,8 @@ box-shadow: none;
 .blog-content-title ul li a i{
   padding-right:4px;
 }
-/* ---------- And Tugle Sidebar right -------------- */
 
+/* --------And  Tugle Sidebar Right ----------*/
 
 
 /* ---------------- Style Social Icons ---------------- */
