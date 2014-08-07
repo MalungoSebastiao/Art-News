@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-ao">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +23,68 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    </head>
+
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+
+    <script type='text/javascript'>
+        $(document).ready(function () {
+
+            var menu = $('.menu');
+            var origOffsetY = menu.offset().top;
+
+            function scroll() {
+                if ($(window).scrollTop() >= origOffsetY) {
+                    $('.menu').addClass('sticky');
+                    $('.content').addClass('menu-padding');
+                } else {
+                    $('.menu').removeClass('sticky');
+                    $('.content').removeClass('menu-padding');
+                }
+
+
+            }
+
+            document.onscroll = scroll;
+
+        });
+    </script>
+
+</head>
     <body>
+        <div id="header_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-xs-12 col-sm-12">
+                        <img src="images/art.news.gif" height="45" width="172">
+                    </div>
+                    <div class="col-md-9 col-xs-12 col-sm-12">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="" title="Entrar"><i class="glyphicon glyphicon-user"></i>Entrar
+                                </a>
+                            </li>
+                            <li class="cadastro">
+                                <a href="" title="Cadastre-se">
+                                    <strong>Cadastre-se</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <span>
+                                    <a href="#" title="Português">
+                                        <img src="images/flag.png" alt="">
+                                    </a>
+                                    <a href="#" title="Inglês">
+                                        <img src="images/flag1.png" alt="">
+                                    </a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="header">
-            <div class="navbar-fixed-top">
+            <div class="menu" id="navbar-fixed">
                 <div class="navbar navbar-inverse" role="navigation"> 
                   <div class="container">                  
                     <div class="navbar-collapse collapse">
@@ -42,30 +100,37 @@
                         </ul>
                     </div><!--/.nav-collapse -->
                   </div>
-                </div>
-              <div id="header2" class="container">
-                 <div class="row">
-                     <div class="col-md-2">
-                         
-                     </div>
-                     <div class="col-md-7 ">
-                        <form class="hidden-md hidden-sm hidden-xs" method="post" action="">                                                 
-                            <input name="s" type="search" class="search_form" id="" required autocomplete="off" />
-                            <input type="submit" class="bottom_submit" value="Buscar na Web">
-                        </form>    
-                     </div>
-                     <div class="col-md-3">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="" title="Entrar"><i class="glyphicon glyphicon-user"></i>Entrar</a></li>
-                                <li>
-                                    <span>
-                                        <a href="#" title="Português"><img src="images/flag.png" alt=""></a>
-                                        <a href="#" title="Inglês"><img src="images/flag1.png" alt=""></a>
-                                    </span>
-                                </li>
-                            </ul>  
-                     </div>
-                 </div> 
+                </div> 
+                <div id="header2" class="container">
+                    <div class="row">
+                         <div class="col-md-2">
+                            <div class="logo_search">
+                                <img src="images/aa1.gif" height="40" width="70">
+                            </div> 
+                         </div>
+                         <div class="col-md-8" id="left-inner-addon">
+                            <form class="hidden-md hidden-sm hidden-xs" method="post" action="">    
+                                <i class="glyphicon glyphicon-search"></i>   
+                                <input name="s" type="text" class="search_form" id="" required autocomplete="off" placeholder="Insira o texto a pesquisar"
+                                autofocus="" aria-haspopup="false"/> 
+
+                               <!--  <input autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" name="_nkw" id="gh-ac" placeholder="Search... " maxlength="300" size="50" class="gh-tb ui-autocomplete-input" type="text" autofocus="" aria-haspopup="false"> -->
+                                <input type="submit" id="gh-btn" class="btn btn-prim" value="Buscar">
+                            </form>    
+                         </div>
+                         <div class="col-md-2">
+                            <div class="social_icon" id="box_icon">
+                                <ul class="pull-right">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa  fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </div>
+                               
+                         </div>
+                    </div> 
               </div>
             </div>
         </div><!-- And Header -->
@@ -73,16 +138,67 @@
         <div id="content" class="container">
             <div class="row">               
                 <div class="col-md-2">
-                    <div class="fixed">
-                       <div class="collum_left_content1">
-                          
-                       </div>
-                       <div class="collum_left_content2">
-                          
-                       </div> 
-                       <div class="collum_left_content3">
-                          
-                       </div>  
+                    <div class="fixed">                
+                        <div class="" id="">
+                           <div class="collum_left_content1">
+                             <p>Clima</p>
+                           </div>
+                           <div class="collum_left_public">
+                             <p>Publicidade</p>
+                           </div>
+                           <div class="collum_left_content2">
+                                 <H2><span class="titulo">HOJE</span>&nbsp;<span class="subtitulo"> Agosto 05, 2014</span></H2>
+                                 <div class="collum_left_content2_contorno">
+                                    <a href="">
+                                        <img src="images/04futeboln.jpg">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                            adipiscing elit.
+                                        </p>
+                                    </a>
+                                    <a href="">
+                                        <img src="images/04futeboln.jpg">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                            adipiscing elit.
+                                        </p>
+                                    </a>
+                                    <a href="">
+                                        <img src="images/04futeboln.jpg">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                                            adipiscing elit.
+                                        </p>
+                                    </a>
+                                </div>
+                           </div> 
+                           <div class="collum_left_content3">
+                              <H2><span class="titulo">Assunto</span>&nbsp;<span class="subtitulo"> Crise 1</span></H2>
+                              <div class="collum_left_content3_contorno">
+                                <a href="" class="collum_left_content3_link">
+                                    <h4>Lorem ipsum dolor</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                                        adipiscing elit
+                                    </p>
+                                </a>
+                                <a href="">
+                                    <h4>Lorem ipsum dolor</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                                        adipiscing elit
+                                    </p>
+                                </a>
+                                <a href="">
+                                    <h4>Lorem ipsum dolor</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetuer adipiscing elit
+                                        adipiscing elit
+                                    </p>
+                                </a>
+                              </div>
+                           </div>  
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -90,7 +206,51 @@
                        
                    </div>
                    <div class="all_notices">
-                       
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="selected"><a href="#"></i>Categorias</a></li>
+                                <li><a href="#about">Notícias</a></li>
+                                <li><a href="#contact">Angola</a></li>
+                                <li><a href="#contact">África</a></li>
+                                <li><a href="#contact">Internacional</a></li>
+                            </ul>
+                        </div> 
+                        <div class="all_noticias_contorno">
+                            <div class="all_noticias_img">
+                                <a href=""> <img src="images/140805liv1_300x206.jpg"></a>
+                            </div>
+                            <div class="all_noticias_text">
+                                <h2>
+                                   <a href=""> 
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    adipiscing elit. Aenean
+                                    </a>
+                                </h2>
+                                <span>
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aen 
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean 
+                                    Lorem ipsum dolor sit amet, 
+                                </span> 
+                            </div>
+                        </div>
+                        <div class="all_noticias_contorno">
+                            <div class="all_noticias_img">
+                                 <a href=""> <img src="images/140805liv1_300x206.jpg"></a>
+                            </div>
+                            <div class="all_noticias_text">
+                                <h2>
+                                   <a href=""> 
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                                    
+                                    </a>
+                                </h2>
+                                <span>
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aen 
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean 
+                                    Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, 
+                                </span> 
+                            </div>
+                        </div>
                    </div>              
                 </div>
                 <div class="col-md-3">
@@ -102,28 +262,60 @@
                         </div>
                         <div class="box2">
                             <div class="sidebar_mais_lidas">
-                                <H2>+ Lidas Art-News</H2>
-                                <div class="media mais_lidas">
-                                    <a href="" class="pull-left"><img src="images/index.png" alt="" />
-                                        <span class="badge">1</span>
-                                    </a>
-                                        <div class="mais_lidas_title">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-                                                         
+                                <H2><span class="titulo">TOP 5</span>&nbsp;<span class="subtitulo">+ Lidas Art-News</span></H2>
+                                <a href="">
+                                    <div class="mais_lidas_geral">
+                                        <div class="mais_lidas_number">
+                                            <span>1</span>
                                         </div>
-                                                   
-                                </div>
+                                        <div class="mais_lidas_text">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean 
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="">
+                                    <div class="mais_lidas_geral">
+                                        <div class="mais_lidas_number">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="mais_lidas_text">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean 
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="">
+                                    <div class="mais_lidas_geral">
+                                        <div class="mais_lidas_number">
+                                            <span>3</span>
+                                        </div>
+                                        <div class="mais_lidas_text">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean 
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="">
+                                    <div class="mais_lidas_geral">
+                                        <div class="mais_lidas_number">
+                                            <span>4</span>
+                                        </div>
+                                        <div class="mais_lidas_text">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean 
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="">
+                                    <div class="mais_lidas_geral">
+                                        <div class="mais_lidas_number">
+                                            <span>5</span>
+                                        </div>
+                                        <div class="mais_lidas_text">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean 
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div class="social_icon pull-center" id="box_icon">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa  fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div>
+                        
                         <div class="box3">
                             <div class="row">
                                <div class="col-sm-12">
